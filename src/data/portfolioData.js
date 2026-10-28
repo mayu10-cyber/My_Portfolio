@@ -4,14 +4,21 @@
  * ============================================================
  */
 
+// Helper to ensure assets load properly on both local dev and GitHub Pages (/My_Portfolio/)
+const asset = (path) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${base}${cleanPath}`;
+};
+
 // 1. Personal & Professional Profile
 export const studentProfile = {
   name: "Mayuresh Parab",
   title: "Full-Stack Web Developer & Computer Engineering Student",
   currentDegree: "B.E. in Computer Engineering",
   currentCollege: "Atharva College of Engineering, Mumbai",
-  avatar: "/assets/images/profile/My self.jpeg", // 1st position (Hero pfp / 1st img box)
-  profilePic: "/assets/images/profile/my self 2.jpg", // 2nd position (About Me / 2nd img box)
+  avatar: asset("assets/images/profile/My self.jpeg"), // 1st position (Hero pfp / 1st img box)
+  profilePic: asset("assets/images/profile/my self 2.jpg"), // 2nd position (About Me / 2nd img box)
   github: "https://github.com/mayu10-cyber",
   shortBio: "Passionate computer engineering student at Atharva College of Engineering with practical internship experience from TejYash Cyber Solutions. Dedicated to engineering intuitive, secure, and user-centric web and mobile solutions.",
   detailedBio: "I am a proactive software developer with hands-on experience building production web applications, e-commerce platforms, and safety applications. With core focus in React.js, HTML5, CSS3, C, C++, and Python, I focus on writing clean, scalable code and delivering polished user experiences."
@@ -132,12 +139,12 @@ export const projectsData = {
         "Direct multi-channel contact portal supporting phone lines, official email, and instant WhatsApp chat."
       ],
       screenshots: [
-        { src: "/assets/images/TYCS-1.png", caption: "Home & Corporate Mission Showcase" },
-        { src: "/assets/images/TYCS-2.png", caption: "Cybersecurity & IT Services Dashboard" },
-        { src: "/assets/images/TYCS-3.png", caption: "Hardware Solutions & Sales Grid" },
-        { src: "/assets/images/TYCS-4.png", caption: "Interactive Service Booking & Scheduling Form" },
-        { src: "/assets/images/TYCS-5.png", caption: "Leadership & Technical Team Profile" },
-        { src: "/assets/images/TYCS-6.png", caption: "Contact Us with Live Google Maps & Direct Messaging" }
+        { src: asset("assets/images/TYCS-1.png"), caption: "Home & Corporate Mission Showcase" },
+        { src: asset("assets/images/TYCS-2.png"), caption: "Cybersecurity & IT Services Dashboard" },
+        { src: asset("assets/images/TYCS-3.png"), caption: "Hardware Solutions & Sales Grid" },
+        { src: asset("assets/images/TYCS-4.png"), caption: "Interactive Service Booking & Scheduling Form" },
+        { src: asset("assets/images/TYCS-5.png"), caption: "Leadership & Technical Team Profile" },
+        { src: asset("assets/images/TYCS-6.png"), caption: "Contact Us with Live Google Maps & Direct Messaging" }
       ]
     },
     {
@@ -157,12 +164,12 @@ export const projectsData = {
         "Promo Coupon Code redemption engine and printable/downloadable PDF order receipts."
       ],
       screenshots: [
-        { src: "/assets/images/book-1.png", caption: "Trending Books Catalog & Interactive Navigation" },
-        { src: "/assets/images/Book-2.png", caption: "About BookNook & Community Hub Showcase" },
-        { src: "/assets/images/Book-3.png", caption: "Interactive 3D Book Synopsis & Card Preview" },
-        { src: "/assets/images/Book-4.png", caption: "Top 20 Must-Read Curated Collection" },
-        { src: "/assets/images/Book-5.png", caption: "Dynamic Wishlist with Bulk 'Buy All' Feature" },
-        { src: "/assets/images/Book-6.png", caption: "Shopping Cart with Real-Time Total & Coupon Engine" }
+        { src: asset("assets/images/book-1.png"), caption: "Trending Books Catalog & Interactive Navigation" },
+        { src: asset("assets/images/Book-2.png"), caption: "About BookNook & Community Hub Showcase" },
+        { src: asset("assets/images/Book-3.png"), caption: "Interactive 3D Book Synopsis & Card Preview" },
+        { src: asset("assets/images/Book-4.png"), caption: "Top 20 Must-Read Curated Collection" },
+        { src: asset("assets/images/Book-5.png"), caption: "Dynamic Wishlist with Bulk 'Buy All' Feature" },
+        { src: asset("assets/images/Book-6.png"), caption: "Shopping Cart with Real-Time Total & Coupon Engine" }
       ]
     },
     {
@@ -182,9 +189,9 @@ export const projectsData = {
         "Curated meditation tracks and de-stressing interactive mini games (Bubble Pop, Zen Garden)."
       ],
       screenshots: [
-        { src: "/assets/images/she-1.png", caption: "Mobile Companion Dashboard & One-Touch SOS Emergency" },
-        { src: "/assets/images/she-2.png", caption: "Emergency Distress Dispatch & Live Location Sharing" },
-        { src: "/assets/images/she-3.png", caption: "Comprehensive Mental Wellness & Guided Breathing Suite" }
+        { src: asset("assets/images/she-1.png"), caption: "Mobile Companion Dashboard & One-Touch SOS Emergency" },
+        { src: asset("assets/images/she-2.png"), caption: "Emergency Distress Dispatch & Live Location Sharing" },
+        { src: asset("assets/images/she-3.png"), caption: "Comprehensive Mental Wellness & Guided Breathing Suite" }
       ]
     }
   ]
@@ -270,7 +277,7 @@ export const hobbiesData = {
     }
   ],
   video: {
-    src: "/assets/videos/Dance.mp4",
+    src: asset("assets/videos/Dance.mp4"),
     title: "Live Dance Performance Video",
     description: "Watch stage dance performance demonstrating choreography and stage presence."
   }
